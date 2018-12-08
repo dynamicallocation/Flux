@@ -23,5 +23,12 @@ namespace Flux
             Employee ss = new Employee();
             ss.Show();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmployeeData ss = new EmployeeData();
+            ss.Show();
+        }
     }
 }
