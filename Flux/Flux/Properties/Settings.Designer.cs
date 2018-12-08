@@ -33,5 +33,16 @@ namespace Flux.Properties {
                 return ((string)(this["EmployeeString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql.cs.luc.edu;Initial Catalog=doszczapinski;User ID=doszczapinski;Pa" +
+            "ssword=p49923")]
+        public string doszczapinskiConnectionString {
+            get {
+                return ((string)(this["doszczapinskiConnectionString"]));
+            }
+        }
     }
 }
