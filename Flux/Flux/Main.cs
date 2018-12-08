@@ -16,5 +16,12 @@ namespace Flux
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Employee ss = new Employee();
+            ss.Show();
+        }
     }
 }

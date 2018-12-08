@@ -11,34 +11,43 @@ using System.Data.SqlClient;
 
 namespace Flux
 {
-    public partial class Signup : Form
+    public partial class Employee : Form
     {
         string connectionString = @"Data Source=sql.cs.luc.edu;Persist Security Info=True;User ID=doszczapinski;Password=p49923";
 
-        public Signup()
+        public Employee()
         {
             InitializeComponent();
         }
 
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet1.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.dataSet1.Employee);
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
                 MessageBox.Show("please fill");
             else
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    SqlCommand sqlCmd = new SqlCommand("UserADD", con);
+                    SqlCommand sqlCmd = new SqlCommand("employeeADD", con);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@Username", textBox1.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Password", textBox2.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@FirstName", textBox1.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@LastName", textBox2.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@PaidMonthly", textBox3.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Salary", textBox4.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("You signed up!");
+                    MessageBox.Show("Employee Added!");
                     Clear();
-
+                    
                     this.Hide();
-                    Login ss = new Login();
+                    Main ss = new Main();
                     ss.Show();
                 }
             }
@@ -51,7 +60,7 @@ namespace Flux
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Login ss = new Login();
+            Main ss = new Main();
             ss.Show();
         }
     }
