@@ -29,7 +29,7 @@ namespace Flux
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    SqlCommand sqlCmd = new SqlCommand("UserADD", con);
+                    SqlCommand sqlCmd = new SqlCommand("UserAdd", con);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
                     sqlCmd.Parameters.AddWithValue("@Username", textBox1.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Password", textBox2.Text.Trim());
