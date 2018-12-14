@@ -33,22 +33,10 @@ namespace EmployeeRoster
             } // end set
         } // end property BaseSalary
 
-        // calculate earnings; override method Earnings in CommissionEmployee
-        public override decimal Earnings()
-        {
-            return baseSalary;
-        } // end method Earnings               
-
-        // return string representation of BasePlusCommissionEmployee object
-        public override string ToString()
-        {
-            return "Salaried Employee" + base.ToString() + " " + baseSalary;
-        } // end method ToString 
-        
-
+      
         public void analyzeBaseProductivity()
         {
-            if(base.GeneratedRevenue > baseSalary)
+            if(base.GeneratedRevenue() > baseSalary)
             {
                 isProductive = true;
             }

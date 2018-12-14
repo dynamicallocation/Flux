@@ -15,7 +15,7 @@ namespace EmployeeRoster
         private decimal generatedRevenue;
         private decimal costPerUnit;
         private decimal unitsSold;
-        public Employee(String first, String last, String ssn,String uid)
+        public Employee(String first, String last, String ssn,String uid,int unitCost,int soldUnits)
         {
 
             firstName = first;
@@ -28,16 +28,9 @@ namespace EmployeeRoster
 
         }
 
-        public decimal GeneratedRevenue
+        public decimal GeneratedRevenue()
         {
-            get
-            {
-                return generatedRevenue;
-            }
-            set
-            {
-                generatedRevenue = costPerUnit * unitsSold;
-            }
+           return unitCost * soldUnits;
         }
 
    
