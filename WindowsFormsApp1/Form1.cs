@@ -14,19 +14,16 @@ namespace WindowsFormsApp1
     {
         public Form1()
         {
+            
             InitializeComponent();
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
         }
 
         
        
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            WindowState = FormWindowState.Maximized;
-            TopMost = true;
-
-        }
-
+     
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -65,6 +62,11 @@ namespace WindowsFormsApp1
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
