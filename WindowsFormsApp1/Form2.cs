@@ -29,7 +29,9 @@ namespace WindowsFormsApp1
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form3 ss = new Form3();
+            ss.Show();
         }
     }
 }
